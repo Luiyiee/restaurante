@@ -364,7 +364,7 @@ include_once './configuracion/conexion.php';
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#tabla').load('php/tablas/administrador/gdf.php');
+            $('#tabla').load('php/tablas/administrador/clientes.php');
             // $('#buscador').load('php/tablas/buscador.php');
         });
     </script>

@@ -30,7 +30,7 @@
 	<!-- main -->
 	<div class="w3layouts-main">
 		<div class="bg-layer">
-			<h1>PREJUS</h1>
+			<h1>Rastaurante Salesiana</h1>
 			<div class="header-main">
 				<div class="main-icon">
 					<span class="fa "><i class="fas fa-chevron-circle-up"></i></span>
@@ -52,7 +52,7 @@
 							<button type="submit" class="btn">Iniciar Sesión</button>
 							<br clear="all">
 							<br clear="all">
-							<a href="registro.php" style="color:#fff" class="btn btn-success"> Registrase </a>
+							<a href="registro.php" class="btn btn-primary"> Registrase </a>
                         </div>
                         <br>
                         <center>

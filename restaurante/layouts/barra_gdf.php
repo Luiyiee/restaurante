@@ -1,17 +1,17 @@
 <?php
 include_once 'configuracion/conexion.php';
-$iduser=$_SESSION['datos_login']['usuario'];
 
-  $select_consolidados_gdf = "SELECT count(*) total_consolidados_gdf FROM gdf where consolidado = 'Consolidado' and  notificacion = '1' and usuario = '$iduser' ";
-  $result_consolidados_gdf      = mysqli_query($conexion, $select_consolidados_gdf);
-  $total_consolidados_gdf  = mysqli_fetch_assoc($result_consolidados_gdf);
-
-  $select_bautizados_gdf = "SELECT count(*) total_bautizados_gdf FROM gdf where  bautizado = 'Si' and notificacion = '1' and usuario = '$iduser' ";
-  $result_bautizados_gdf      = mysqli_query($conexion, $select_bautizados_gdf);
-  $total_bautizados_gdf  = mysqli_fetch_assoc($result_bautizados_gdf);
+$sql_pedidos = "SELECT count(*) total_pedidos FROM tb_pedidos where notificacion = '1' ";
+$result_pedidos      = mysqli_query($conexion, $sql_pedidos);
+$total_pedidos  = mysqli_fetch_assoc($result_pedidos);
 
 
-  $total_notificaciones_gdf = $total_consolidados_gdf['total_consolidados_gdf'] + $total_bautizados_gdf['total_bautizados_gdf'];
+$select_facturas = "SELECT count(*) total_facturas FROM tb_facturas where notificacion = '1' ";
+$result_facturas      = mysqli_query($conexion, $select_facturas);
+$total_facturas  = mysqli_fetch_assoc($result_facturas);
+
+
+$total_notificaciones = $total_pedidos['total_pedidos'] + $total_facturas['total_facturas'];
           ?>
 <!--Start topbar header-->
 <header class="topbar-nav">
@@ -34,11 +34,11 @@ $iduser=$_SESSION['datos_login']['usuario'];
     <li class="nav-item dropdown-lg">
       <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
       
-      <?php if($total_notificaciones_gdf > 0){
+      <?php if($total_notificaciones > 0){
         
         ?>
       <i class="fa fa-envelope-open-o"></i>
-      <span class="badge badge-light badge"> <?php echo $total_notificaciones_gdf ?> </span>
+      <span class="badge badge-light badge"> <?php echo $total_notificaciones ?> </span>
       </a>
       <?php
        } else{
@@ -49,7 +49,7 @@ $iduser=$_SESSION['datos_login']['usuario'];
       <div class="dropdown-menu dropdown-menu-right">
         <ul class="list-group list-group-flush">
          <li class="list-group-item d-flex justify-content-between align-items-center">
-         Tienes <?php echo $total_notificaciones_gdf ?> Mensajes nuevos
+         Tienes <?php echo $total_notificaciones ?> Mensajes nuevos
           <span class="badge badge-light">12</span>
           </li>
           <li class="list-group-item">
@@ -74,12 +74,12 @@ $iduser=$_SESSION['datos_login']['usuario'];
 
     <li class="nav-item dropdown-lg">
       <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
-    <i class="fa fa-bell-o"></i><span class="badge badge-info badge"> <?php echo $total_notificaciones_gdf ?> </span></a>
+    <i class="fa fa-bell-o"></i><span class="badge badge-info badge"> <?php echo $total_notificaciones ?> </span></a>
       <div class="dropdown-menu dropdown-menu-right">
         <ul class="list-group list-group-flush">
           <li class="list-group-item d-flex justify-content-between align-items-center">
-           <?php echo $total_notificaciones_gdf ?> Notificaciones
-          <span class="badge badge-info"> <?php echo $total_notificaciones_gdf ?> </span>
+           <?php echo $total_notificaciones ?> Notificaciones
+          <span class="badge badge-info"> <?php echo $total_notificaciones ?> </span>
           </li>
           <li class="list-group-item">
           <a href="javaScript:void();">

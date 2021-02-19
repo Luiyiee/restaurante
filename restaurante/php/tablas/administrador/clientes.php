@@ -15,11 +15,11 @@ $conexion = conexion();
 <div class="row">
 	<div class="col-lg-12">
 		<div class="card">
-			<div class="card-header"><i class="fa fa-table"></i> GDF</div>
+			<div class="card-header"><i class="fa fa-table"></i> Clientes</div>
 
 			<div class="card-header">
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalNuevo">
-					<i class="fa fa-plus"></i> Agregar GDF
+					<i class="fa fa-plus"></i> Agregar Cliente
 				</button>
 			</div>
 
@@ -37,16 +37,15 @@ $conexion = conexion();
 						</thead>
 						<tbody>
 							<?php
-							$sql_query = "SELECT * FROM usuarios where nivel = 'GDF' and eliminado ='1' ";
+							$sql_query = "SELECT * FROM usuarios where nivel = 'Cliente' and eliminado ='1' ";
 							$result_set = mysqli_query($conexion, $sql_query);
 							$i = 1;
 							while ($ver = mysqli_fetch_array($result_set)) {
 								$datos = $ver['id'] . "||" .
-									$ver['usuario'] . "||" .
-									$ver['lider_1'] . "||" .
-									$ver['lider_2'] . "||" .
-									$ver['telefono_1'] . "||" .
-									$ver['telefono_2'] . "||" .
+									$ver['nombres'] . "||" .
+									$ver['apellidos'] . "||" .
+									$ver['cedula'] . "||" .
+									$ver['telefono'] . "||" .
 									$ver['email'] . "||" .
 									$ver['nivel'] . "||" .
 									$ver['estado'];
@@ -59,10 +58,23 @@ $conexion = conexion();
 									</td>
 									<!-- <td><php echo $f[1]; ?></td> -->
 									<!-- <td><php echo $f['GDF']; ?></td> -->
-									<td><?php echo $ver['usuario']; ?></td>
+									<td><?php echo $ver['nombres']; ?></td>
 									<td><?php echo $ver['estado']; ?></td>
 									<td>
-										<button class="btn btn-warning btn-small btnVer" data-id="<?php echo $ver['id']; ?>" data-usuario="<?php echo $ver['usuario']; ?>" data-lider_1="<?php echo $ver['lider_1']; ?>" data-lider_2="<?php echo $ver['lider_2']; ?>" data-telefono_1="<?php echo $ver['telefono_1']; ?>" data-telefono_2="<?php echo $ver['telefono_2']; ?>" data-email="<?php echo $ver['email']; ?>" data-estado="<?php echo $ver['estado']; ?>" data-fecha_creacion="<?php echo $ver['fecha_creacion']; ?>" data-fecha_editado="<?php echo $ver['fecha_editado']; ?>" data-toggle="modal" data-target="#modalVer">
+									<button class="btn btn-warning btn-small btnVer" 
+										data-id="<?php echo $ver['id']; ?>" 
+										data-nombres="<?php echo $ver['nombres']; ?>" 
+										data-apellidos="<?php echo $ver['apellidos']; ?>" 
+										data-cedula="<?php echo $ver['cedula']; ?>" 
+										data-telefono="<?php echo $ver['telefono']; ?>" 
+										data-email="<?php echo $ver['email']; ?>" 
+										data-estado="<?php echo $ver['estado']; ?>" 
+										data-usuario_creacion="<?php echo $ver['usuario_creacion']; ?>" 
+										data-usuario_editado="<?php echo $ver['usuario_editado']; ?>" 
+										data-fecha_creacion="<?php echo $ver['fecha_creacion']; ?>" 
+										data-fecha_editado="<?php echo $ver['fecha_editado']; ?>" 
+										
+										data-toggle="modal" data-target="#modalVer">
 
 											<i class="fas fa-eye"></i>
 										</button>
@@ -118,7 +130,7 @@ $conexion = conexion();
 						<div class="col-sm-6">
 							<label>Usuario</label>
 							<div class="input-group mb-3">
-								<input type="text" class="form-control input-sm" id="usuarioVer" name="usuario">
+								<input type="text" class="form-control input-sm" id="usuarioVer" name="nombres">
 							</div>
 						</div>
 
@@ -223,7 +235,7 @@ $conexion = conexion();
 
 		$(".btnVer").click(function() {
 			idEditar = $(this).data('id');
-			var usuario = $(this).data('usuario');
+			var nombres = $(this).data('nombres');
 			var lider_1 = $(this).data('lider_1');
 			var lider_2 = $(this).data('lider_2');
 			var telefono_1 = $(this).data('telefono_1');
@@ -233,7 +245,7 @@ $conexion = conexion();
 			var fecha_creacion = $(this).data('fecha_creacion');
 			var fecha_editado = $(this).data('fecha_editado');
 
-			$("#usuarioVer").val(usuario);
+			$("#usuarioVer").val(nombres);
 			$("#liderVer_1").val(lider_1);
 			$("#liderVer_2").val(lider_2);
 			$("#telefonoVer_1").val(telefono_1);

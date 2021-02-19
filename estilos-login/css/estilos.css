@@ -130,7 +130,7 @@ h1 {
 /* copia */
 .w3layouts-main {
     /* background-image: url('../images/05.JPG'); */
-    background-image: url('../images/fondo.png');
+    background-image: url('../images/fondo2.jpg');
     background-repeat: repeat-x;
     animation: 20000s infinite linear;
     -webkit-animation: slideleft 20000s infinite linear;
@@ -258,4 +258,23 @@ a {
     outline: none;
     border: none;
     width: 100%;
+}
+
+.header-left-bottom a.btn {
+    background: #007cc0;
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: .8em 2em;
+    letter-spacing: 1px;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    width: 80%;
+    text-align: center;
 }

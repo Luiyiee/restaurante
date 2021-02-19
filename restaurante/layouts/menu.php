@@ -52,13 +52,13 @@
 
     <!-- FIN -->
     <!-- EVENTOS -->
-    <li>
+    <!-- <li>
       <a href="javaScript:void();" class="waves-effect">
         <i class="fa fa-share"></i> <span>Evento</span>
         <i class="fa fa-angle-left pull-right"></i>
       </a>
       <ul class="sidebar-submenu">
-        <!-- Crear evento -->
+        Crear evento
         <li>
           <a href="javaScript:void();"><i class="zmdi zmdi-long-arrow-right"></i> Cartelera <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="sidebar-submenu">
@@ -67,7 +67,7 @@
             <li><a href="vista-previa-cartelera.php"><i class="zmdi zmdi-long-arrow-right"></i> Vista previa</a></li>
           </ul>
         </li>
-        <!-- TRIBUS -->
+        TRIBUS
         <li>
           <a href="javaScript:void();"><i class="zmdi zmdi-long-arrow-right"></i> Tribus <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="sidebar-submenu">
@@ -76,7 +76,7 @@
 
           </ul>
         </li>
-        <!-- REGISTROS -->
+        REGISTROS
         <li>
           <a href="javaScript:void();"><i class="zmdi zmdi-long-arrow-right"></i> Registros <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="sidebar-submenu">
@@ -89,21 +89,21 @@
           </ul>
         </li>
 
-        <!-- <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Level One</a></li> -->
+        <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Level One</a></li>
 
       </ul>
-    </li>
+    </li> -->
 
     <!-- FIN -->
 
     <!-- MENSAJES -->
-    <li>
+    <!-- <li>
       <a href="javaScript:void();" class="waves-effect">
         <i class="fa fa-share"></i> <span>Mensajes</span>
         <i class="fa fa-angle-left pull-right"></i>
       </a>
       <ul class="sidebar-submenu">
-        <!-- Peticiones -->
+        Peticiones
         <li>
           <a href="javaScript:void();"><i class="zmdi zmdi-long-arrow-right"></i> Peticiones <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="sidebar-submenu">
@@ -111,7 +111,7 @@
             <li><a href="mantenimiento-peticiones.php"><i class="zmdi zmdi-long-arrow-right"></i> Mantenimiento </a></li>
           </ul>
         </li>
-        <!-- Testimonios -->
+        Testimonios
         <li>
           <a href="javaScript:void();"><i class="zmdi zmdi-long-arrow-right"></i> Testimonios <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="sidebar-submenu">
@@ -121,29 +121,30 @@
           </ul>
         </li>
     
-        <!-- <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Level One</a></li> -->
+        <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Level One</a></li>
 
       </ul>
-    </li>
+    </li> -->
 
     <!-- FIN -->
 
     <!-- CONSOLIDACIONES -->
     <li>
       <a href="javaScript:void();" class="waves-effect">
-        <i class="fa fa-share"></i> <span>Consolidaciones</span>
+        <i class="fa fa-share"></i> <span>Carta</span>
         <i class="fa fa-angle-left pull-right"></i>
       </a>
       <ul class="sidebar-submenu">   
-        <li><a href="lista-consolidados" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Consolidados</a></li>
-        <li><a href="lista-no-consolidados" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Pendientes</a></li>
+        <li><a href="../php/tablas/gdf/lista-consolidados-gdf.php" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Comidas</a></li>
+        <li><a href="lista-bebidas" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Bebidas</a></li>
+        <li><a href="lista-postres" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Postres</a></li>
 
       </ul>
     </li>
 
     <!-- FIN -->
     <!-- ENCUENTROS -->
-    <li>
+    <!-- <li>
       <a href="javaScript:void();" class="waves-effect">
         <i class="fa fa-share"></i> <span>Encuentros</span>
         <i class="fa fa-angle-left pull-right"></i>
@@ -153,19 +154,18 @@
         <li><a href="lista-no-encuentros" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Pendientes</a></li>
 
       </ul>
-    </li>
+    </li> -->
 
     <!-- FIN -->
     <!-- BAUTIZADOS -->
     <li>
       <a href="javaScript:void();" class="waves-effect">
-        <i class="fa fa-share"></i> <span>Bautizos</span>
+        <i class="fa fa-share"></i> <span>Pedidos</span>
         <i class="fa fa-angle-left pull-right"></i>
       </a>
       <ul class="sidebar-submenu">   
-        <li><a href="lista-bautizados" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Bautizados</a></li>
-        <li><a href="lista-bautizados-proceso" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Proceso</a></li>
-        <li><a href="lista-no-bautizados" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Pendientes</a></li>
+        <li><a href="lista-bautizados" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Realizados</a></li>
+        <li><a href="lista-bautizados-proceso" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Pendientes</a></li>
 
       </ul>
     </li>

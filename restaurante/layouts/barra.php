@@ -104,7 +104,7 @@ $total_notificaciones = $total_pedidos['total_pedidos'] + $total_facturas['total
           <li class="dropdown-item user-details">
             <a href="javaScript:void();">
               <div class="media">
-                <div class="avatar"><img class="align-self-start mr-3" src="images/users/administradores/<?php echo $_SESSION['datos_login']['imagen']; ?>" alt="user avatar"></div>
+                <div class="avatar"><img class="align-self-start mr-3" src="../images/users/administradores/<?php echo $_SESSION['datos_login']['imagen']; ?>" alt="user avatar"></div>
                 <div class="media-body">
                   <h6 class="mt-2 user-title"> <?php echo $_SESSION['datos_login']['nombres']; ?> </h6>
                   <p class="user-subtitle"> <?php echo $_SESSION['datos_login']['email']; ?> </p>
@@ -113,13 +113,13 @@ $total_notificaciones = $total_pedidos['total_pedidos'] + $total_facturas['total
             </a>
           </li>
 
-          <li class="dropdown-divider"></li>
+          <!-- <li class="dropdown-divider"></li>
           <li class="dropdown-item"><i class="icon-envelope mr-2"></i> Inbox</li>
           <li class="dropdown-divider"></li>
           <li class="dropdown-item"><i class="icon-wallet mr-2"></i> Account</li>
           <li class="dropdown-divider"></li>
           <li class="dropdown-item"><i class="icon-settings mr-2"></i> Setting</li>
-          <li class="dropdown-divider"></li>
+          <li class="dropdown-divider"></li> -->
           <li class="dropdown-item">
             <a href="javascript:edt_id('<?php echo $_SESSION['datos_login']['id_usuario']; ?>')"><i class="icon-settings mr-2"></i> Configuración
           </li>
