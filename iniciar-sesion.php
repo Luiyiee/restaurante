@@ -50,6 +50,9 @@
 					
 						<div class="bottom">
 							<button type="submit" class="btn">Iniciar Sesión</button>
+							<br clear="all">
+							<br clear="all">
+							<a href="registro.php" style="color:#fff" class="btn btn-success"> Registrase </a>
                         </div>
                         <br>
                         <center>
@@ -69,7 +72,7 @@
 			<!-- echo '<p>'. $_GET['error'] .'</p>'; -->
 			</div>
 
-		
+			
 		</div>
 	</div>
 
