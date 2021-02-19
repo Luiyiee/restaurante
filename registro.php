@@ -61,34 +61,27 @@ $conexion = conexion();
 
             <div class="form-input">
               <span><i class="fa fa-user"></i></span>
-              <input type="text" id="edad" name="edad" onkeypress="return validaNumericos(event)" placeholder="Edad">
+              <input type="text" id="cedula" name="cedula" onkeypress="return validaNumericos(event)" placeholder="cedula">
             </div>
+            
+            
+            <div class="form-input">
+                <span><i class="fa fa-user"></i></span>
+                <input type="telefono" id="telefono" name="telefono" onkeypress="return validaNumericos(event)" placeholder="Telefono">
+              </div>
             
             <div class="form-input">
               <span><i class="fa fa-user"></i></span>
               <input type="email" id="email" name="email" placeholder="Email">
               </div>
-
-              <div class="form-input">
-                <span><i class="fa fa-user"></i></span>
-                <input type="telefono" id="telefono" name="telefono" onkeypress="return validaNumericos(event)" placeholder="Telefono">
+            
+            <div class="form-input">
+              <span><i class="fa fa-user"></i></span>
+              <input type="password" id="password" name="password" placeholder="password">
               </div>
 
-              <div class="form-input">
-							<span><i class="fa fa-lock"></i></span>
-							<select style=" width: 100%;
-											height: 40px;
-											margin-bottom: 20px;
-											border:none;
-											border-radius: 5px;
-											outline: none;
-											background: white;
-											padding-left: 45px;" 
-							     name="sexo" id="sexo">
-								<option value="M">Masculino</option>
-								<option value="F">Femenino</option>
-							</select>
-						</div>
+
+        
             <div class="row mb-3">
 							<div class="col-12 d-flex">
 								<div class="custom-control custom-checkbox">
@@ -141,9 +134,11 @@ $conexion = conexion();
     $(document).ready(function() {
       $('#btnguardar').click(function() {
         var datos = $('#frmajax').serialize();
+        // var datos = new FormData(document.getElementById("frmajax"));
         $.ajax({
           type: "POST",
-          url: "cca/php/registro/registro.php",
+          url: "restaurante/php/crud/administrador/clientes/agregar.php",
+          // url: "cca/php/crud/administrador/registro/registro.php",
           data: datos,
           success: function(r) {
             if(r == 2){
@@ -154,6 +149,7 @@ $conexion = conexion();
               document.getElementById("frmajax").reset();
             } else {
               alert("Fallo el server" + r);
+              console.log(r);
               document.getElementById("frmajax").reset();
             }
           }

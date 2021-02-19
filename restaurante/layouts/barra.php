@@ -101,7 +101,7 @@ $total_facturas  = mysqli_fetch_assoc($result_facturas);
            <div class="media">
              <div class="avatar"><img class="align-self-start mr-3" src="images/users/administradores/<?php echo $_SESSION['datos_login']['imagen']; ?>" alt="user avatar"></div>
             <div class="media-body">
-            <h6 class="mt-2 user-title"> <?php echo $_SESSION['datos_login']['usuario']; ?> </h6>
+            <h6 class="mt-2 user-title"> <?php echo $_SESSION['datos_login']['nombres']; ?> </h6>
             <p class="user-subtitle"> <?php echo $_SESSION['datos_login']['email']; ?> </p>
             </div>
            </div>
