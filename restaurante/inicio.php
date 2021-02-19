@@ -45,9 +45,9 @@ if ($_SESSION['datos_login']['conexion'] === 'Desconectado') {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Prejus</title>
+  <title>Restaurante</title>
   <!--favicon-->
-  <link rel="icon" href="images\logo.jpeg" type="image/x-icon">
+  <?php include 'layouts/icono.php' ?>
   <!-- Vector CSS -->
   <link href="assets\plugins\vectormap\jquery-jvectormap-2.0.2.css" rel="stylesheet">
   <!-- simplebar CSS-->

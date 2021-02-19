@@ -4,27 +4,31 @@ session_start();
 require_once "../../../configuracion/conexion.php";
 $conexion = conexion();
 
-$usuario = $_POST['usuario'];
-$telefono_1 = $_POST['telefono_1'];
-$telefono_2 = $_POST['telefono_2'];
+$nombres = $_POST['nombres'];
+$apellidos = $_POST['apellidos'];
+$cedula = $_POST['cedula'];
+$telefono = $_POST['telefono'];
 $email = $_POST['email'];
 $password=sha1($_POST['password']);
 $estado = $_POST['estado'];
 
-$iduser=$_SESSION['datos_login']['usuario'];
+$iduser=$_SESSION['datos_login']['email'];
 
 if(buscaRepetido($email,$conexion)==1){
 echo 2;
 }else{
-                if (!preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/', $usuario)) {
-                    echo "No se pudo agregar el usuario $usuario <br> Ingrese solo letras ";
+                if (!preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/', $nombres)) {
+                    echo "No se pudo agregar el nombres $nombres <br> Ingrese solo letras ";
                 } else
-                if (preg_replace("/^[0-9]{10}+$/", '', $telefono_1)) {
-                    echo "No se pudo agregar el teléfono $telefono_1 <br> Ingrese solo 10 números ";
+                if (!preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/', $apellidos)) {
+                    echo "No se pudo agregar el nombres $apellidos <br> Ingrese solo letras ";
+                } else
+                if (preg_replace("/^[0-9]{10}+$/", '', $telefono)) {
+                    echo "No se pudo agregar el teléfono $telefono <br> Ingrese solo 10 números ";
                 } else
                 
-                if (preg_replace("/^[0-9]{10}+$/", '', $telefono_2)) {
-                    echo "No se pudo agregar el teléfono $telefono_1 <br> Ingrese solo 10 números ";
+                if (preg_replace("/^[0-9]{10}+$/", '', $cedula)) {
+                    echo "No se pudo agregar la cedula $cedula <br> Ingrese solo 10 números ";
                 } else 
                 if (!preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,10})$/',$email)) {
                     echo "No se pudo agregar el email $email";
@@ -41,9 +45,9 @@ echo 2;
                     if($extension=='jpg' || $extension == 'png' || $extension == 'jpeg' || $extension){
                         if(move_uploaded_file($_FILES['imagen']['tmp_name'], $carpeta.$nombreFinal)){
                             $sql = "INSERT into usuarios 
-                            (usuario,lider_1,lider_2,telefono_1,telefono_2,email,password,nivel,estado,img_perfil,
+                            (nombres,apellidos,cedula,telefono,email,password,nivel,estado,img_perfil,
                              fecha_creacion,fecha_editado,usuario_creacion,usuario_editado,conexion,eliminado)
-                    values  ('$usuario','Jorge Delgado','Jorge Delgado','$telefono_1','$telefono_2','$email','$password',
+                    values  ('$nombres','$apellidos','$cedula','$telefono','$email','$password',
                              'Administrador','$estado','$nombreFinal',
                               now(),now(),'$iduser','Sin editar','Desconectado','1')";
                             echo $result = mysqli_query($conexion, $sql)or die($conexion->error);

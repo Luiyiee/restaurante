@@ -5,9 +5,9 @@ if (!isset($_SESSION['datos_login'])) {
     header("Location: ../");
 }
 
-$arregloUsuario = $_SESSION['datos_login'];
+$arreglonombres = $_SESSION['datos_login'];
 
-if ($arregloUsuario['nivel'] != 'Administrador') {
+if ($arreglonombres['nivel'] != 'Administrador') {
     header("Location: ../");
 }
 
@@ -137,19 +137,16 @@ include_once './configuracion/conexion.php';
                         <div class="row">
 
                             <div class="col-sm-6">
-                                <label>Usuario</label>
+                                <label>nombres</label>
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control input-sm" id="usuario" name="usuario">
+                                    <input type="text" class="form-control input-sm" id="nombres" name="nombres">
                                 </div>
                             </div>
 
                             <div class="col-sm-6">
-                                <label>Estado</label>
+                                <label>Apellidos</label>
                                 <div class="input-group mb-3">
-                                    <select class="form-control" name="estado" id="estado">
-                                        <option value="Activado">Activar</option>
-                                        <option value="Desactivado">Desactivar</option>
-                                    </select>
+                                    <input type="text" class="form-control input-sm" id="apellidos" name="apellidos">
                                 </div>
                             </div>
 
@@ -157,16 +154,16 @@ include_once './configuracion/conexion.php';
 
                         <div class="row">
                             <div class="col-sm-6">
-                                <label>Telefono 1</label>
+                                <label>Cedula</label>
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control input-sm" id="telefono_1" name="telefono_1">
+                                    <input type="text" class="form-control input-sm" id="cedula" name="cedula">
                                 </div>
                             </div>
 
                             <div class="col-sm-6">
-                                <label>Telefono 2</label>
+                                <label>Telefono </label>
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control input-sm" id="telefono_2" name="telefono_2">
+                                    <input type="text" class="form-control input-sm" id="telefono" name="telefono">
                                 </div>
                             </div>
 
@@ -178,6 +175,15 @@ include_once './configuracion/conexion.php';
                         <input type="password" class="form-control input-sm" id="password" name="password">
 
 
+                        <div class="col-sm-12">
+                                <label>Estado</label>
+                             
+                                    <select class="form-control" name="estado" id="estado">
+                                        <option value="Activado">Activar</option>
+                                        <option value="Desactivado">Desactivar</option>
+                                    </select>
+                             
+                            </div>
 
                         <label>Imagen</label>
                         <input type="file" id="imagen" name="imagen" class="form-control">
@@ -217,43 +223,54 @@ include_once './configuracion/conexion.php';
                         <div class="row">
 
                             <div class="col-sm-6">
-                                <label>Usuario</label>
+                                <label>nombres</label>
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control input-sm" id="usuariou" name="usuario">
+                                    <input type="text" class="form-control input-sm" id="nombresu" name="nombres">
                                 </div>
                             </div>
 
                             <div class="col-sm-6">
-                                <label>Estado</label>
+                                <label>apellidos</label>
                                 <div class="input-group mb-3">
-                                    <select class="form-control" name="estado" id="estado">
-                                        <option value="Activado">Activar</option>
-                                        <option value="Desactivado">Desactivar</option>
-                                    </select>
+                                    <input type="text" class="form-control input-sm" id="apellidosu" name="apellidos">
                                 </div>
                             </div>
+
+                           
 
                         </div>
 
                         <div class="row">
-                            <div class="col-sm-6">
-                                <label>Telefono 1</label>
+                        <div class="col-sm-6">
+                                <label>cedula</label>
                                 <div class="input-group mb-3">
-                                <input type="text" class="form-control input-sm" id="telefonou_1" name="telefono_1">
+                                <input type="text" class="form-control input-sm" id="cedula" name="cedula">
                                 </div>
                             </div>
 
                             <div class="col-sm-6">
-                                <label>Telefono 2</label>
+                                <label>Telefono</label>
                                 <div class="input-group mb-3">
-                                <input type="text" class="form-control input-sm" id="telefonou_2" name="telefono_2">
+                                <input type="text" class="form-control input-sm" id="telefonou" name="telefono">
                                 </div>
                             </div>
+
+                            
 
                         </div>
 
                         <label>Email</label>
                         <input type="text" class="form-control input-sm" id="emailu" name="email">
+
+                      
+                                <label>Estado</label>
+                            
+                                    <select class="form-control" name="estado" id="estado">
+                                        <option value="Activado">Activar</option>
+                                        <option value="Desactivado">Desactivar</option>
+                                    </select>
+                              
+                        
                         
                         <label>Imagen</label>
                         <!-- <input type="text" class="form-control input-sm" id="imagenu" name="imagenU"> -->
@@ -324,14 +341,14 @@ include_once './configuracion/conexion.php';
         $(document).ready(function() {
             $('#btnAgregar').click(function() {
 
-                if ($('#usuario').val() == "") {
-                    // alertify.alert("Debes agregar el usuario");
+                if ($('#nombres').val() == "") {
+                    // alertify.alert("Debes agregar el nombres");
                     llenar_campo();
                     return false;
-                } else if ($('#telefono_1').val() == "") {
+                } else if ($('#cedula').val() == "") {
                     llenar_campo();
                     return false;
-                } else if ($('#telefono_2').val() == "") {
+                } else if ($('#telefono').val() == "") {
                     llenar_campo();
                     return false;
                 } else if ($('#email').val() == "") {
@@ -365,9 +382,10 @@ include_once './configuracion/conexion.php';
                             
                             
 
-                            $("#usuario").val('').change();
-                            $("#telefono_1").val('').change();
-                            $("#telefono_2").val('').change();
+                            $("#nombres").val('').change();
+                            $("#apellidos").val('').change();
+                            $("#cedula").val('').change();
+                            $("#telefono").val('').change();
                             $("#email").val('').change();
                             $("#password").val('').change();
                             $("#estado").val('').change();
@@ -397,13 +415,12 @@ include_once './configuracion/conexion.php';
             d = datos.split('||');
 
             $('#idEdit').val(d[0]);
-            $('#usuariou').val(d[1]);
-            $('#lideru_1').val(d[2]);
-            $('#lideru_2').val(d[3]);
-            $('#telefonou_1').val(d[4]);
-            $('#telefonou_2').val(d[5]);
-            $('#emailu').val(d[6]);
-            $('#estadou').val(d[8]);
+            $('#nombresu').val(d[1]);
+            $('#apellidosu').val(d[2]);
+            $('#telefonou').val(d[3]);
+            $('#cedulau').val(d[4]);
+            $('#emailu').val(d[5]);
+            $('#estadou').val(d[6]);
             // $('#imagenu').val(d[5]);
 
         }

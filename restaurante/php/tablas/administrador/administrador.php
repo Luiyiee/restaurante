@@ -30,7 +30,7 @@ $conexion = conexion();
 							<tr>
 								<th></th>
 								<th>Foto</th>
-								<th>usuario</th>
+								<th>nombres</th>
 								<th>Estado</th>
 								<th>Opciones</th>
 							</tr>
@@ -42,11 +42,10 @@ $conexion = conexion();
 							$i = 1;
 							while ($ver = mysqli_fetch_array($result_set)) {
 								$datos = $ver['id'] . "||" .
-									$ver['usuario'] . "||" .
-									$ver['lider_1'] . "||" .
-									$ver['lider_2'] . "||" .
-									$ver['telefono_1'] . "||" .
-									$ver['telefono_2'] . "||" .
+									$ver['nombres'] . "||" .
+									$ver['apellidos'] . "||" .
+									$ver['cedula'] . "||" .
+									$ver['telefono'] . "||" .
 									$ver['email'] . "||" .
 									$ver['nivel'] . "||" .
 									$ver['estado'];
@@ -59,19 +58,18 @@ $conexion = conexion();
 									</td>
 									<!-- <td><php echo $f[1]; ?></td> -->
 									<!-- <td><php echo $f['GDF']; ?></td> -->
-									<td><?php echo $ver['usuario']; ?></td>
+									<td><?php echo $ver['nombres']; ?></td>
 									<td><?php echo $ver['estado']; ?></td>
 									<td>
 										<button class="btn btn-warning btn-small btnVer" 
 										data-id="<?php echo $ver['id']; ?>" 
-										data-usuario="<?php echo $ver['usuario']; ?>" 
-										data-lider_1="<?php echo $ver['lider_1']; ?>" 
-										data-lider_2="<?php echo $ver['lider_2']; ?>" 
-										data-telefono_1="<?php echo $ver['telefono_1']; ?>" 
-										data-telefono_2="<?php echo $ver['telefono_2']; ?>" 
-										data-email="<?php echo 
-										$ver['email']; ?>" 
+										data-nombres="<?php echo $ver['nombres']; ?>" 
+										data-apellidos="<?php echo $ver['apellidos']; ?>" 
+										data-cedula="<?php echo $ver['cedula']; ?>" 
+										data-telefono="<?php echo $ver['telefono']; ?>" 
+										data-email="<?php echo $ver['email']; ?>" 
 										data-estado="<?php echo $ver['estado']; ?>" 
+										data-usuario_creacion="<?php echo $ver['usuario_creacion']; ?>" 
 										data-usuario_editado="<?php echo $ver['usuario_editado']; ?>" 
 										data-fecha_creacion="<?php echo $ver['fecha_creacion']; ?>" 
 										data-fecha_editado="<?php echo $ver['fecha_editado']; ?>" 
@@ -100,7 +98,7 @@ $conexion = conexion();
 							<tr>
 								<th>#</th>
 								<th>Foto</th>
-								<th>Usuario</th>
+								<th>nombres</th>
 								<th>Estado</th>
 								<th>Opciones</th>
 							</tr>
@@ -129,16 +127,16 @@ $conexion = conexion();
 					<div class="row">
 
 						<div class="col-sm-6">
-							<label for="usuario">Usuario</label>
+							<label for="nombres">Nombres</label>
 							<div class="input-group mb-3">
-								<input type="text" name="usuario" id="usuarioVer" class="form-control">
+								<input type="text" name="nombres" id="nombresVer" class="form-control">
 							</div>
 						</div>
 
 						<div class="col-sm-6">
-							<label for="estado">Estado</label>
+							<label for="apellidos">Apellidos</label>
 							<div class="input-group mb-3">
-								<input type="text" name="estado" id="estadoVer" class="form-control">
+								<input type="text" name="apellidos" id="apellidosVer" class="form-control">
 							</div>
 						</div>
 
@@ -146,17 +144,17 @@ $conexion = conexion();
 
 					<div class="row">
 
-						<div class="col-sm-6">
-							<label for="lider_1">Lider 1</label>
+					<div class="col-sm-6">
+						<label for="email">Email</label>
 							<div class="input-group mb-3">
-								<input type="text" name="lider_1" id="liderVer_1" class="form-control">
+							<input type="text" name="email" id="emailVer" class="form-control">
 							</div>
 						</div>
 
 						<div class="col-sm-6">
-								<label for="lider_2">Lider 2</label>
-							<div class="input-group mb-3">
-								<input type="text" name="lider_2" id="liderVer_2" class="form-control">
+								<label for="estado">Estado</label>
+								<div class="input-group mb-3">
+								<input type="text" name="estado" id="estadoVer" class="form-control">
 							</div>
 						</div>
 
@@ -166,16 +164,16 @@ $conexion = conexion();
 					<div class="row">
 
 						<div class="col-sm-6">
-						<label for="telefono_1">Telefono 1</label>
+						<label for="cedula">Cedula </label>
 							<div class="input-group mb-3">
-							<input type="text" name="telefono_1" id="telefonoVer_1" class="form-control">
+							<input type="text" name="cedula" id="cedulaVer" class="form-control">
 							</div>
 						</div>
 
 						<div class="col-sm-6">
-						<label for="telefono_2">Telefono 2</label>
+						<label for="telefono_2">Telefono </label>
 							<div class="input-group mb-3">
-							<input type="text" name="telefono_2"  id="telefonoVer_2" class="form-control">
+							<input type="text" name="telefono"  id="telefonoVer" class="form-control">
 							</div>
 						</div>
 
@@ -185,9 +183,9 @@ $conexion = conexion();
 					<div class="row">
 
 						<div class="col-sm-6">
-						<label for="email">Email</label>
+						<label for="usuario_creacion">Creado por:</label>
 							<div class="input-group mb-3">
-							<input type="text" name="email" id="emailVer" class="form-control">
+							<input type="text" name="usuario_creacion" id="usuario_creacionVer" class="form-control">
 							</div>
 						</div>
 
@@ -254,37 +252,37 @@ $conexion = conexion();
 
 		$(".btnVer").click(function() {
 			idEditar = $(this).data('id');
-			var usuario = $(this).data('usuario');
-			var lider_1 = $(this).data('lider_1');
-			var lider_2 = $(this).data('lider_2');
-			var telefono_1 = $(this).data('telefono_1');
-			var telefono_2 = $(this).data('telefono_2');
+			var nombres = $(this).data('nombres');
+			var apellidos = $(this).data('apellidos');
+			var cedula = $(this).data('cedula');
+			var telefono = $(this).data('telefono');
 			var email = $(this).data('email');
 			var estado = $(this).data('estado');
+			var usuario_creacion = $(this).data('usuario_creacion');
 			var usuario_editado = $(this).data('usuario_editado');
 			var fecha_creacion = $(this).data('fecha_creacion');
 			var fecha_editado = $(this).data('fecha_editado');
 
-			$("#usuarioVer").val(usuario);
-			$("#liderVer_1").val(lider_1);
-			$("#liderVer_2").val(lider_2);
-			$("#telefonoVer_1").val(telefono_1);
-			$("#telefonoVer_2").val(telefono_2);
+			$("#nombresVer").val(nombres);
+			$("#apellidosVer").val(apellidos);
+			$("#cedulaVer").val(cedula);
+			$("#telefonoVer").val(telefono);
 			$("#emailVer").val(email);
 			$("#estadoVer").val(estado);
+			$("#usuario_creacionVer").val(usuario_creacion);
 			$("#usuario_editadoVer").val(usuario_editado);
 			$("#fecha_creacionVer").val(fecha_creacion);
 			$("#fecha_editadoVer").val(fecha_editado);
 			$("#idVer").val(idEditar);
 
 			// document.getElementById("emailVer").disabled = true;
-			document.getElementById("usuarioVer").disabled = true;
-			document.getElementById("liderVer_1").disabled = true;
-			document.getElementById("liderVer_2").disabled = true;
-			document.getElementById("telefonoVer_1").disabled = true;
-			document.getElementById("telefonoVer_2").disabled = true;
+			document.getElementById("nombresVer").disabled = true;
+			document.getElementById("apellidosVer").disabled = true;
+			document.getElementById("cedulaVer").disabled = true;
+			document.getElementById("telefonoVer").disabled = true;
 			document.getElementById("emailVer").disabled = true;
 			document.getElementById("estadoVer").disabled = true;
+			document.getElementById("usuario_creacionVer").disabled = true;
 			document.getElementById("usuario_editadoVer").disabled = true;
 			document.getElementById("fecha_creacionVer").disabled = true;
 			document.getElementById("fecha_editadoVer").disabled = true;

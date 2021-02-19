@@ -3,7 +3,7 @@
   <div class="brand-logo">
     <a href="index.html">
       <img src="images/logo.jpeg" class="logo-icon" alt="logo icon">
-      <h5 class="logo-text"> RED PREJUS</h5>
+      <h5 class="logo-text"> RESTAURANTE </h5>
     </a>
   </div>
   <!-- <div class="user-details">
@@ -42,30 +42,9 @@
         <i class="fa fa-angle-left pull-right"></i>
       </a>
       <ul class="sidebar-submenu">
-        <!-- Administradores -->
-        <li>
-          <a href="javaScript:void();"><i class="zmdi zmdi-long-arrow-right"></i> Administradores <i class="fa fa-angle-left pull-right"></i></a>
-          <ul class="sidebar-submenu">
-            <li><a href="mantenimiento-administradores.php"><i class="zmdi zmdi-long-arrow-right"></i> Mantenimiento </a></li>
-            <li><a href="vista-previa-administradores.php"><i class="zmdi zmdi-long-arrow-right"></i> Vista previa</a></li>
-          </ul>
-        </li>
-        <!-- GDF -->
-        <li>
-          <a href="javaScript:void();"><i class="zmdi zmdi-long-arrow-right"></i> GDF <i class="fa fa-angle-left pull-right"></i></a>
-          <ul class="sidebar-submenu">
-            <li><a href="mantenimiento-gdf.php"><i class="zmdi zmdi-long-arrow-right"></i> Mantenimiento </a></li>
-            <li><a href="vista-previa-gdf.php"><i class="zmdi zmdi-long-arrow-right"></i> Vista previa</a></li>
-            <!-- <li>
-                <a href="javaScript:void();"><i class="zmdi zmdi-long-arrow-right"></i> Level Two <i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="sidebar-submenu">
-                  <li><a href="javaScript:void();"><i class="zmdi zmdi-long-arrow-right"></i> Level Three</a></li>
-                  <li><a href="javaScript:void();"><i class="zmdi zmdi-long-arrow-right"></i> Level Three</a></li>
-                </ul>
-              </li> -->
-          </ul>
-        </li>
-
+           <li><a href="mantenimiento-administradores.php"><i class="zmdi zmdi-long-arrow-right"></i> Administradores </a></li>
+           <li><a href="mantenimiento-gdf.php"><i class="zmdi zmdi-long-arrow-right"></i> Clientes </a></li>
+        
         <!-- <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Level One</a></li> -->
 
       </ul>
