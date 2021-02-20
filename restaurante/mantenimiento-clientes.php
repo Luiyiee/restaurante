@@ -22,7 +22,7 @@ include_once './configuracion/conexion.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Mantenimiento comidas</title>
+    <title>Mantenimiento clientes</title>
     <!--favicon-->
     <?php include 'layouts/icono.php' ?>
     <!-- simplebar CSS-->
@@ -125,61 +125,7 @@ include_once './configuracion/conexion.php';
     <!--insertar  -->
 
 
-    <div class="modal fade" id="modalNuevo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Agregar comida</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
-                </div>
-                <div class="modal-body">
-
-                    <form id="frmCartelera" enctype="multipart/form-data">
-
-                        <label>Nombre</label>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control input-sm" id="nombre" name="nombre">
-                        </div>
-                        <div class="row">
-
-
-                            <div class="col-sm-6">
-                                <label>Precio</label>
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control input-sm" id="precio" name="precio">
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <label>categoria</label>
-                                <div class="input-group mb-3">
-                                    <select name="categoria" id="categoria" class="form-control">
-                                        <option value="comida">comida</option>
-                                        <option value="bebida">bebida</option>
-                                        <option value="postre">postre</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        <label>Imagen</label>
-                        <input type="file" id="imagen" name="imagen" class="form-control">
-
-
-                        <p></p>
-                        <!-- <center>  <span id="btnAgregar" class="btn btn-success">Agregar</span></center> -->
-                    </form>
-                </div>
-                <div class="modal-footer">
-
-                    <button type="button" class="btn btn-success" id="btnAgregar" data-dismiss="modal">Agregar</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Modal para edicion de datos -->
 
@@ -194,24 +140,30 @@ include_once './configuracion/conexion.php';
                 <div class="modal-body">
 
                     <!--  -->
-                    <form id="frmCarteleraU" enctype="multipart/form-data">
+                    <form id="frmAdministradorU" enctype="multipart/form-data">
 
                         <input type="text" hidden="" id="idEdit" name="id">
-
                         <div class="row">
 
                             <div class="col-sm-6">
-                                <label>Nombre</label>
+
+                                <label>Nombres</label>
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control input-sm" id="nombreu" name="nombre">
+                                    <input type="text" class="form-control input-sm" id="nombresu" name="nombres">
+
                                 </div>
                             </div>
+
                             <div class="col-sm-6">
-                                <label>Precio</label>
+
+                                <label>Apellidos</label>
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control input-sm" id="preciou" name="precio">
+                                    <input type="text" class="form-control input-sm" id="apellidosu" name="apellidos">
+
                                 </div>
                             </div>
+
+
 
                         </div>
 
@@ -219,30 +171,52 @@ include_once './configuracion/conexion.php';
                         <div class="row">
 
                             <div class="col-sm-6">
-                                <label>categoria</label>
+
+                                <label>cedula</label>
                                 <div class="input-group mb-3">
-                                  <select name="categoria" id="categoriau" class="form-control">
-                                  <option value="comida">comida</option>
-                                  <option value="bebida">bebida</option>
-                                  <option value="postre">postre</option>
-                                  </select>
+                                    <input type="text" class="form-control input-sm" id="cedulau" name="cedula">
+
                                 </div>
                             </div>
 
                             <div class="col-sm-6">
-                                <label>Imagen</label>
+                                <label>telefono</label>
                                 <div class="input-group mb-3">
-                                    <input type="file" id="imagenu" name="imagen" class="form-control">
+                                    <input type="text" class="form-control input-sm" id="telefonou" name="telefono">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label>Email</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control input-sm" id="emailu" name="email">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label>Estado</label>
+                                <div class="input-group mb-3">
+                                    <select class="form-control" name="estado" id="estado">
+                                        <option value="Activado">Activar</option>
+                                        <option value="Desactivado">Desactivar</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
 
 
 
+
+                        <!-- <input type="text" class="form-control input-sm" id="estadou" name="estado"> -->
 
                     </form>
                 </div>
                 <div class="modal-footer">
+                    <!-- <button id="btnActualizaarticulo" type="button" class="btn btn-warning" data-dismiss="modal">Actualizar</button> -->
+                    <!-- 	<td><button class="btn btn-success" onclick="anim5_noti()">SHOW ME</button></td> -->
                     <button type="button" class="btn btn-success" id="actualizadatos" data-dismiss="modal">Actualizar</button>
 
                 </div>
@@ -252,6 +226,12 @@ include_once './configuracion/conexion.php';
 
     <!--  -->
 
+
+
+
+
+    <!-- modales -->
+    <!--  -->
 
 
 
@@ -292,65 +272,14 @@ include_once './configuracion/conexion.php';
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#tabla').load('php/tablas/administrador/cartelera.php');
+            $('#tabla').load('php/tablas/administrador/clientes.php');
             // $('#buscador').load('php/tablas/buscador.php');
         });
     </script>
 
     <script type="text/javascript">
-        $(document).ready(function() {
-            $('#btnAgregar').click(function() {
-
-                if ($('#nombre').val() == "") {
-                    llenar_campo();
-                    return false;
-                } else if ($('#precio').val() == "") {
-                    llenar_campo();
-                    return false;
-                } else if ($('#categoria').val() == "") {
-                    llenar_campo();
-                    return false;
-                } else if ($('#imagen').val() == "") {
-                    llenar_campo();
-                    return false;
-                }
-                var formData = new FormData(document.getElementById("frmCartelera"));
-
-                $.ajax({
-                    url: "php/crud/administrador/cartelera/agregar.php",
-                    type: "post",
-                    dataType: "html",
-                    data: formData,
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-
-                    success: function(r) {
-                        if (r == 2) {
-                            existe_agregar();
-                        } else
-                        if (r == 1) {
-                            $("#nombre").val('').change();
-                            $("#telefono").val('').change();
-                            $("#descripcion").val('').change();
-                            $("#telefono").val('').change();
-                            $("#imagen").val('').change();
-
-                            exito_agregar();
-                            $('#tabla').load('php/tablas/administrador/cartelera.php');
-                        } else {
-
-                            error_agregar(r);
-                            $('#tabla').load('php/tablas/administrador/cartelera.php');
-
-                        }
-                    }
-                });
-
-            });
-            $('#actualizadatos').click(function() {
-                actualizaDatos();
-            });
+        $('#actualizadatos').click(function() {
+            actualizaDatos();
         });
     </script>
 
@@ -361,19 +290,22 @@ include_once './configuracion/conexion.php';
             d = datos.split('||');
 
             $('#idEdit').val(d[0]);
-            $('#nombreu').val(d[1]);
-            $('#preciou').val(d[2]);
-            $('#categoriau').val(d[3]);
-            $('#fechau').val(d[4]);
+            $('#nombresu').val(d[1]);
+            $('#apellidosu').val(d[2]);
+            $('#cedulau').val(d[3]);
+            $('#telefonou').val(d[4]);
+            $('#emailu').val(d[5]);
+            $('#estadou').val(d[6]);
+            // $('#imagenu').val(d[5]);
 
         }
 
         function actualizaDatos() {
 
-            var formData = new FormData(document.getElementById("frmCarteleraU"));
+            var formData = new FormData(document.getElementById("frmAdministradorU"));
             $.ajax({
                 type: "POST",
-                url: "php/crud/administrador/cartelera/modificar.php",
+                url: "php/crud/administrador/clientes/modificar.php",
                 dataType: "html",
                 data: formData,
                 cache: false,
@@ -383,12 +315,13 @@ include_once './configuracion/conexion.php';
 
                     if (r == 1) {
                         exito_actualizar();
-                        $("#imagenu").val('').change()
-                        $('#tabla').load('php/tablas/administrador/cartelera.php');
+                        $('#tabla').load('php/tablas/administrador/clientes.php');
+                        // alertify.success("Actualizado con exito :D");
                     } else {
-                        $('#tabla').load('php/tablas/administrador/cartelera.php');
+                        $('#tabla').load('php/tablas/administrador/clientes.php');
                         error_actualizar(r);
-                    //    console.log/
+                        // alertify.error("Fallo el servidor :(");
+
                     }
                 }
             });
@@ -404,6 +337,7 @@ include_once './configuracion/conexion.php';
                 ,
                 function() {
                     cancelar_eliminar();
+                    // alertify.error('Se cancelo');
 
                 });
         }
@@ -414,79 +348,24 @@ include_once './configuracion/conexion.php';
 
             $.ajax({
                 type: "POST",
-                url: "php/crud/administrador/cartelera/eliminar.php",
+                url: "php/crud/administrador/clientes/eliminar.php",
                 data: cadena,
                 success: function(r) {
                     if (r == 1) {
                         exito_eliminar();
-                        $('#tabla').load('php/tablas/administrador/cartelera.php');
+                        $('#tabla').load('php/tablas/administrador/clientes.php');
+                        // alertify.success("Eliminado con exito!");
                     } else {
                         error_eliminar();
+                        // alertify.error("Fallo el servidor :(");
                     }
                 }
             });
         }
     </script>
 
-    <script>
-        //  Notificaciones
-        // -------------------------------
-        //          Agregar
-        // --------------------------------
-
-        // Existo agregar
-        function exito_agregar() {
-            Lobibox.notify('success', {
-                pauseDelayOnHover: true,
-                size: 'mini',
-                rounded: true,
-                icon: 'fa fa-check-circle',
-                delayIndicator: false,
-                continueDelayOnInactiveTab: false,
-                position: 'top right',
-                msg: 'Agregado con exito'
-            });
-        }
-        // Existe email
-        function existe_agregar() {
-            Lobibox.notify('warning', {
-                pauseDelayOnHover: true,
-                size: 'mini',
-                rounded: true,
-                icon: 'fa fa-check-circle',
-                delayIndicator: false,
-                continueDelayOnInactiveTab: false,
-                position: 'top right',
-                msg: 'Este nombre ya existe'
-            });
-        }
-        // Error agregar
-        function error_agregar(respuesta) {
-            Lobibox.notify('error', {
-                pauseDelayOnHover: true,
-                size: 'mini',
-                rounded: true,
-                icon: 'fa fa-times-circle',
-                delayIndicator: false,
-                continueDelayOnInactiveTab: false,
-                position: 'top right',
-                msg: respuesta
-            });
-        }
-        // Llenar campo
-        function llenar_campo() {
-            Lobibox.notify('info', {
-                pauseDelayOnHover: true,
-                size: 'mini',
-                rounded: true,
-                icon: 'fa fa-info-circle',
-                delayIndicator: false,
-                continueDelayOnInactiveTab: false,
-                position: 'top right',
-                msg: 'Debe llenar los campos'
-            });
-        }
-        // -------------------------------
+<script>
+ // -------------------------------
         //          Actualizar
         // -------------------------------
 
@@ -566,7 +445,7 @@ include_once './configuracion/conexion.php';
                 msg: 'Lo sentenimos no se pudo eliminar'
             });
         }
-    </script>
+        </script>
 </body>
 
 </html>

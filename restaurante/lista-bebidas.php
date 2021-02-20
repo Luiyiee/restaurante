@@ -22,7 +22,7 @@ include_once './configuracion/conexion.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Mantenimiento GDF</title>
+    <title>Mantenimiento comidas</title>
     <!--favicon-->
     <?php include 'layouts/icono.php' ?>
     <!-- simplebar CSS-->
@@ -129,91 +129,39 @@ include_once './configuracion/conexion.php';
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Agregar GDF</h4>
+                    <h4 class="modal-title" id="myModalLabel">Agregar comida</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
                 </div>
                 <div class="modal-body">
 
-                    <form id="frmAdministrador" enctype="multipart/form-data">
-                        <div class="row">
+                    <form id="frmCartelera" enctype="multipart/form-data">
 
-                            <div class="col-sm-6">
-                                <label>Usuario</label>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">GDF</span>
-                                    </div>
-                                    <input type="text" class="form-control input-sm" id="usuario" name="usuario">
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <label>Estado</label>
-                                <select class="form-control" name="estado" id="estado">
-                                    <option value="Activado">Activar</option>
-                                    <option value="Desactivado">Desactivar</option>
-                                </select>
-                            </div>
-
-                        </div>
-
-
-                        <label>Lider 1</label>
+                        <label>Nombre</label>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control input-sm" id="lider_1" name="lider_1">
-                            <div class="input-group-append">
-                                <span class="input-group-text"> <i class="fa fa-user-o"></i> </span>
-                            </div>
-                        </div>
-
-                        <label>Lider 2</label>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control input-sm" id="lider_2" name="lider_2">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fa fa-user-o"></i></span>
-                            </div>
+                            <input type="text" class="form-control input-sm" id="nombre" name="nombre">
                         </div>
                         <div class="row">
 
-                            <div class="col-sm-6">
 
-                                <label>Telefono 1</label>
+                            <div class="col-sm-6">
+                                <label>Precio</label>
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control input-sm" id="telefono_1" name="telefono_1">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
-                                    </div>
+                                    <input type="text" class="form-control input-sm" id="precio" name="precio">
                                 </div>
                             </div>
 
                             <div class="col-sm-6">
-                                <label>Telefono 2</label>
+                                <label>categoria</label>
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control input-sm" id="telefono_2" name="telefono_2">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
-                                    </div>
+                                    <select name="categoria" id="categoria" class="form-control">
+                                        <option value="comida">comida</option>
+                                        <option value="comida">bebida</option>
+                                        <option value="comida">postres</option>
+                                    </select>
                                 </div>
                             </div>
 
-                        </div>
-
-
-                        <label>Email</label>
-                        <div class="input-group mb-3">
-                            <input type="email" class="form-control input-sm" id="email" name="email">
-                            <div class="input-group-append">
-                                <span class="input-group-text"> <i class="fa fa-envelope-o"></i> </span>
-                            </div>
-                        </div>
-
-                        <label>Contraseña</label>
-                        <div class="input-group mb-3">
-                            <input type="password" class="form-control input-sm" id="password" name="password">
-                            <div class="input-group-append">
-                                <span class="input-group-text"> <i class="fa fa-key" aria-hidden="true"></i> </span>
-                            </div>
                         </div>
 
 
@@ -246,69 +194,55 @@ include_once './configuracion/conexion.php';
                 <div class="modal-body">
 
                     <!--  -->
-                    <form id="frmAdministradorU" enctype="multipart/form-data">
+                    <form id="frmCarteleraU" enctype="multipart/form-data">
 
                         <input type="text" hidden="" id="idEdit" name="id">
+
                         <div class="row">
 
                             <div class="col-sm-6">
-
-                                <label>Usuario</label>
+                                <label>Nombre</label>
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control input-sm" id="usuariou" name="usuario">
-
+                                    <input type="text" class="form-control input-sm" id="nombreu" name="nombre">
                                 </div>
                             </div>
-
                             <div class="col-sm-6">
-                                <label>Estado</label>
+                                <label>Precio</label>
                                 <div class="input-group mb-3">
-                                    <select class="form-control" name="estado" id="estado">
-                                        <option value="Activado">Activar</option>
-                                        <option value="Desactivado">Desactivar</option>
-                                    </select>
+                                    <input type="text" class="form-control input-sm" id="preciou" name="precio">
                                 </div>
                             </div>
 
                         </div>
 
-                        <label>Lider 1</label>
-                        <input type="text" class="form-control input-sm" id="lideru_1" name="lider_1">
-                        <label>Lider 2</label>
-                        <input type="text" class="form-control input-sm" id="lideru_2" name="lider_2">
+
                         <div class="row">
 
                             <div class="col-sm-6">
-
-                        <label>telefono 1</label>
+                                <label>categoria</label>
                                 <div class="input-group mb-3">
-                                <input type="text" class="form-control input-sm" id="telefonou_1" name="telefono_1">
-
+                                  <select name="categoria" id="categoriau" class="form-control">
+                                  <option value="comida">comida</option>
+                                  <option value="bebida">bebida</option>
+                                  <option value="postres">postres</option>
+                                  </select>
                                 </div>
                             </div>
 
                             <div class="col-sm-6">
-                            <label>telefono 2</label>
+                                <label>Imagen</label>
                                 <div class="input-group mb-3">
-                                <input type="text" class="form-control input-sm" id="telefonou_2" name="telefono_2">
+                                    <input type="file" id="imagenu" name="imagen" class="form-control">
                                 </div>
                             </div>
-
                         </div>
-                      
-                      
-                        <label>Email</label>
-                        <input type="text" class="form-control input-sm" id="emailu" name="email">
 
-                        <!-- <input type="text" class="form-control input-sm" id="estadou" name="estado"> -->
-                        <label>Imagen</label>
-                        <!-- <input type="text" class="form-control input-sm" id="imagenu" name="imagenU"> -->
-                        <input type="file" id="imagenu" name="imagen" class="form-control">
+
+
+
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <!-- <button id="btnActualizaarticulo" type="button" class="btn btn-warning" data-dismiss="modal">Actualizar</button> -->
-                    <!-- 	<td><button class="btn btn-success" onclick="anim5_noti()">SHOW ME</button></td> -->
                     <button type="button" class="btn btn-success" id="actualizadatos" data-dismiss="modal">Actualizar</button>
 
                 </div>
@@ -318,12 +252,6 @@ include_once './configuracion/conexion.php';
 
     <!--  -->
 
-
-
-
-
-    <!-- modales -->
-    <!--  -->
 
 
 
@@ -364,92 +292,15 @@ include_once './configuracion/conexion.php';
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#tabla').load('php/tablas/administrador/clientes.php');
+            $('#tabla').load('php/tablas/administrador/bebidas.php');
             // $('#buscador').load('php/tablas/buscador.php');
         });
     </script>
 
     <script type="text/javascript">
-        $(document).ready(function() {
-            $('#btnAgregar').click(function() {
-
-                if ($('#usuario').val() == "") {
-                    info_agregar();
-                    return false;
-                } else if ($('#lider_1').val() == "") {
-                    info_agregar();
-                    return false;
-                } else if ($('#lider_2').val() == "") {
-                    info_agregar();
-                    return false;
-                } else if ($('#telefono_1').val() == "") {
-                    info_agregar();
-                    return false;
-                } else if ($('#telefono_2').val() == "") {
-                    info_agregar();
-                    return false;
-                } else if ($('#email').val() == "") {
-                    info_agregar();
-                    return false;
-                } else if ($('#password').val() == "") {
-                    info_agregar();
-                    return false;
-                } else if ($('#imagen').val() == "") {
-                    info_agregar();
-                    return false;
-                }
-                var formData = new FormData(document.getElementById("frmAdministrador"));
-
-                $.ajax({
-                    url: "php/crud/administrador/gdf/agregar.php",
-                    type: "post",
-                    dataType: "html",
-                    data: formData,
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-
-                    success: function(r) {
-                        if (r == 2) {
-                            existe_agregar();
-                            // alertify.alert("Este email ya existe :(");
-                        } else
-                        if (r == 1) {
-                            // existo_agregar();
-                            existo_agregar();
-                            $('#tabla').load('php/tablas/administrador/gdf.php');
-                            //  alertify.success("Agregado con exito :D");
-
-                            $("#usuario").val('').change();
-                            $("#lider_1").val('').change();
-                            $("#lider_2").val('').change();
-                            $("#telefono_1").val('').change();
-                            $("#telefono_2").val('').change();
-                            $("#email").val('').change();
-                            $("#password").val('').change();
-                            $("#imagen").val('').change();
-                        } else {
-
-                            error_agregar();
-                            $("#usuario").val('').change();
-                            $("#lider_1").val('').change();
-                            $("#lider_2").val('').change();
-                            $("#telefono_1").val('').change();
-                            $("#telefono_2").val('').change();
-                            $("#email").val('').change();
-                            $("#password").val('').change();
-                            $("#imagen").val('').change();
-                            $('#tabla').load('php/tablas/administrador/gdf.php');
-                            // alertify.error("Fallo el servidor :(");
-
-                        }
-                    }
-                });
-
-            });
+       
             $('#actualizadatos').click(function() {
                 actualizaDatos();
-            });
         });
     </script>
 
@@ -460,23 +311,19 @@ include_once './configuracion/conexion.php';
             d = datos.split('||');
 
             $('#idEdit').val(d[0]);
-            $('#usuariou').val(d[1]);
-            $('#lideru_1').val(d[2]);
-            $('#lideru_2').val(d[3]);
-            $('#telefonou_1').val(d[4]);
-            $('#telefonou_2').val(d[5]);
-            $('#emailu').val(d[6]);
-            $('#estadou').val(d[8]);
-            // $('#imagenu').val(d[5]);
+            $('#nombreu').val(d[1]);
+            $('#preciou').val(d[2]);
+            $('#categoriau').val(d[3]);
+            $('#fechau').val(d[4]);
 
         }
 
         function actualizaDatos() {
 
-            var formData = new FormData(document.getElementById("frmAdministradorU"));
+            var formData = new FormData(document.getElementById("frmCarteleraU"));
             $.ajax({
                 type: "POST",
-                url: "php/crud/administrador/gdf/modificar.php",
+                url: "php/crud/administrador/cartelera/modificar.php",
                 dataType: "html",
                 data: formData,
                 cache: false,
@@ -487,13 +334,11 @@ include_once './configuracion/conexion.php';
                     if (r == 1) {
                         exito_actualizar();
                         $("#imagenu").val('').change()
-                        $('#tabla').load('php/tablas/administrador/gdf.php');
-                        // alertify.success("Actualizado con exito :D");
+                        $('#tabla').load('php/tablas/administrador/bebidas.php');
                     } else {
-                        $('#tabla').load('php/tablas/administrador/gdf.php');
-                        error_actualizar();
-                        // alertify.error("Fallo el servidor :(");
-
+                        $('#tabla').load('php/tablas/administrador/bebidas.php');
+                        error_actualizar(r);
+                    //    console.log/
                     }
                 }
             });
@@ -508,8 +353,7 @@ include_once './configuracion/conexion.php';
 
                 ,
                 function() {
-                    existe_eliminar();
-                    // alertify.error('Se cancelo');
+                    cancelar_eliminar();
 
                 });
         }
@@ -520,22 +364,159 @@ include_once './configuracion/conexion.php';
 
             $.ajax({
                 type: "POST",
-                url: "php/crud/administrador/gdf/eliminar.php",
+                url: "php/crud/administrador/cartelera/eliminar.php",
                 data: cadena,
                 success: function(r) {
                     if (r == 1) {
                         exito_eliminar();
-                        $('#tabla').load('php/tablas/administrador/gdf.php');
-                        // alertify.success("Eliminado con exito!");
+                        $('#tabla').load('php/tablas/administrador/bebidas.php');
                     } else {
                         error_eliminar();
-                        // alertify.error("Fallo el servidor :(");
                     }
                 }
             });
         }
     </script>
 
+    <script>
+        //  Notificaciones
+        // -------------------------------
+        //          Agregar
+        // --------------------------------
+
+        // Existo agregar
+        function exito_agregar() {
+            Lobibox.notify('success', {
+                pauseDelayOnHover: true,
+                size: 'mini',
+                rounded: true,
+                icon: 'fa fa-check-circle',
+                delayIndicator: false,
+                continueDelayOnInactiveTab: false,
+                position: 'top right',
+                msg: 'Agregado con exito'
+            });
+        }
+        // Existe email
+        function existe_agregar() {
+            Lobibox.notify('warning', {
+                pauseDelayOnHover: true,
+                size: 'mini',
+                rounded: true,
+                icon: 'fa fa-check-circle',
+                delayIndicator: false,
+                continueDelayOnInactiveTab: false,
+                position: 'top right',
+                msg: 'Este nombre ya existe'
+            });
+        }
+        // Error agregar
+        function error_agregar(respuesta) {
+            Lobibox.notify('error', {
+                pauseDelayOnHover: true,
+                size: 'mini',
+                rounded: true,
+                icon: 'fa fa-times-circle',
+                delayIndicator: false,
+                continueDelayOnInactiveTab: false,
+                position: 'top right',
+                msg: respuesta
+            });
+        }
+        // Llenar campo
+        function llenar_campo() {
+            Lobibox.notify('info', {
+                pauseDelayOnHover: true,
+                size: 'mini',
+                rounded: true,
+                icon: 'fa fa-info-circle',
+                delayIndicator: false,
+                continueDelayOnInactiveTab: false,
+                position: 'top right',
+                msg: 'Debe llenar los campos'
+            });
+        }
+        // -------------------------------
+        //          Actualizar
+        // -------------------------------
+
+        //  Existo actualizar 
+        function exito_actualizar() {
+            Lobibox.notify('success', {
+                pauseDelayOnHover: true,
+                size: 'mini',
+                rounded: true,
+                icon: 'fa fa-check-circle',
+                delayIndicator: false,
+                continueDelayOnInactiveTab: false,
+                position: 'top right',
+                msg: 'Actualizado con exito'
+            });
+        }
+
+        // Error actualizar
+        function error_actualizar(respuesta) {
+            Lobibox.notify('error', {
+                pauseDelayOnHover: true,
+                size: 'mini',
+                rounded: true,
+                icon: 'fa fa-times-circle',
+                delayIndicator: false,
+                continueDelayOnInactiveTab: false,
+                position: 'top right',
+                msg: respuesta
+            });
+        }
+
+
+
+
+        // ------------------------------------
+        // Eliminar
+        // ------------------------------------
+
+        //  Exito eliminar
+        function exito_eliminar() {
+            Lobibox.notify('success', {
+                pauseDelayOnHover: true,
+                size: 'mini',
+                rounded: true,
+                icon: 'fa fa-check-circle',
+                delayIndicator: false,
+                continueDelayOnInactiveTab: false,
+                position: 'top right',
+                msg: 'Eliminado con exito'
+            });
+        }
+
+        //  Cancelar eliminar
+        function cancelar_eliminar() {
+            Lobibox.notify('warning', {
+                pauseDelayOnHover: true,
+                size: 'mini',
+                rounded: true,
+                delayIndicator: false,
+                icon: 'fa fa-exclamation-circle',
+                continueDelayOnInactiveTab: false,
+                position: 'top right',
+                msg: 'Se cancelo la acción'
+            });
+        }
+
+        //  Error eliminar
+        function error_eliminar() {
+            Lobibox.notify('error', {
+                pauseDelayOnHover: true,
+                size: 'mini',
+                rounded: true,
+                delayIndicator: false,
+                icon: 'fa fa-times-circle',
+                continueDelayOnInactiveTab: false,
+                position: 'top right',
+                msg: 'Lo sentenimos no se pudo eliminar'
+            });
+        }
+    </script>
 </body>
 
 </html>

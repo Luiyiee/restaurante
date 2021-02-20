@@ -15,6 +15,32 @@ $estado = $_POST['estado'];
 $iduser = $_SESSION['datos_login']['email'];
 
 
+
+if ($_FILES['imagen']['name'] != '') {
+	$carpeta = "../../../../images/users/clientes/";
+	$nombreI = $_FILES['imagen']['name'];
+
+	//imagen.casa.jpg
+	$temp = explode('.', $nombreI);
+	$extension = end($temp);
+
+	$nombreFinal = time() . '.' . $extension;
+	if ($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg') {
+		if (move_uploaded_file($_FILES['imagen']['tmp_name'], $carpeta . $nombreFinal)) {
+			$fila = $conexion->query('select img_perfil from usuarios where id=' . $_POST['id']);
+			$id = mysqli_fetch_row($fila);
+			if (file_exists('../../../../images/users/clientes/' . $id[0])) {
+				unlink('../../../../images/users/clientes/' . $id[0]);
+			}
+			$conexion->query("update usuarios set img_perfil='" . $nombreFinal . "' where id=" . $_POST['id']);
+		} else {
+
+			echo "no se puede subir la imagen";
+		}
+	}
+
+}
+
 if (!preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/', $nombres)) {
 	echo "No se pudo actualizar el nombres $nombres <br> Ingrese solo letras ";
 } else

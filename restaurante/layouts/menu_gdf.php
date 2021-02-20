@@ -2,8 +2,8 @@
 <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
   <div class="brand-logo">
     <a href="index.html">
-      <img src="images/logo.jpeg" class="logo-icon" alt="logo icon">
-      <h5 class="logo-text"> RED PREJUS</h5>
+      <img src="images/" class="logo-icon" alt="logo icon">
+      <h5 class="logo-text"> RESTAURANTE SALESIANO</h5>
     </a>
   </div>
   <!-- <div class="user-details">

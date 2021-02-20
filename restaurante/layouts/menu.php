@@ -2,7 +2,7 @@
 <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
   <div class="brand-logo">
     <a href="index.html">
-      <img src="images/logo.jpeg" class="logo-icon" alt="logo icon">
+      <img src="images/" class="logo-icon" alt="logo icon">
       <h5 class="logo-text"> RESTAURANTE </h5>
     </a>
   </div>
@@ -43,7 +43,7 @@
       </a>
       <ul class="sidebar-submenu">
            <li><a href="mantenimiento-administradores.php"><i class="zmdi zmdi-long-arrow-right"></i> Administradores </a></li>
-           <li><a href="mantenimiento-gdf.php"><i class="zmdi zmdi-long-arrow-right"></i> Clientes </a></li>
+           <li><a href="mantenimiento-clientes.php"><i class="zmdi zmdi-long-arrow-right"></i> Clientes </a></li>
         
         <!-- <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Level One</a></li> -->
 
@@ -51,82 +51,7 @@
     </li>
 
     <!-- FIN -->
-    <!-- EVENTOS -->
-    <!-- <li>
-      <a href="javaScript:void();" class="waves-effect">
-        <i class="fa fa-share"></i> <span>Evento</span>
-        <i class="fa fa-angle-left pull-right"></i>
-      </a>
-      <ul class="sidebar-submenu">
-        Crear evento
-        <li>
-          <a href="javaScript:void();"><i class="zmdi zmdi-long-arrow-right"></i> Cartelera <i class="fa fa-angle-left pull-right"></i></a>
-          <ul class="sidebar-submenu">
-            <li><a href="mantenimiento-cartelera.php"><i class="zmdi zmdi-long-arrow-right"></i> Mantenimiento </a></li>
-            <li><a href="mantenimiento-tiempo-registro.php"><i class="zmdi zmdi-long-arrow-right"></i> Tiempo registro </a></li>
-            <li><a href="vista-previa-cartelera.php"><i class="zmdi zmdi-long-arrow-right"></i> Vista previa</a></li>
-          </ul>
-        </li>
-        TRIBUS
-        <li>
-          <a href="javaScript:void();"><i class="zmdi zmdi-long-arrow-right"></i> Tribus <i class="fa fa-angle-left pull-right"></i></a>
-          <ul class="sidebar-submenu">
-            <li><a href="mantenimiento-tribus.php"><i class="zmdi zmdi-long-arrow-right"></i> Mantenimiento </a></li>
-            <li><a href="vista-previa-tribus.php"><i class="zmdi zmdi-long-arrow-right"></i> Vista previa</a></li>
-
-          </ul>
-        </li>
-        REGISTROS
-        <li>
-          <a href="javaScript:void();"><i class="zmdi zmdi-long-arrow-right"></i> Registros <i class="fa fa-angle-left pull-right"></i></a>
-          <ul class="sidebar-submenu">
-            <li><a href="registros.php"><i class="zmdi zmdi-long-arrow-right"></i> Registros </a></li>
-            <li><a href="asignados.php"><i class="zmdi zmdi-long-arrow-right"></i> Asignados </a></li>
-            <li><a href="no-asignados.php"><i class="zmdi zmdi-long-arrow-right"></i> No asignados </a></li>
-            <li><a href="vista-previa-registros.php"><i class="zmdi zmdi-long-arrow-right"></i> Vista previa</a></li>
-            <li><a href="vista-previa-reportes-estadisticos.php"><i class="zmdi zmdi-long-arrow-right"></i> Reportes estadisticos</a></li>
-
-          </ul>
-        </li>
-
-        <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Level One</a></li>
-
-      </ul>
-    </li> -->
-
-    <!-- FIN -->
-
-    <!-- MENSAJES -->
-    <!-- <li>
-      <a href="javaScript:void();" class="waves-effect">
-        <i class="fa fa-share"></i> <span>Mensajes</span>
-        <i class="fa fa-angle-left pull-right"></i>
-      </a>
-      <ul class="sidebar-submenu">
-        Peticiones
-        <li>
-          <a href="javaScript:void();"><i class="zmdi zmdi-long-arrow-right"></i> Peticiones <i class="fa fa-angle-left pull-right"></i></a>
-          <ul class="sidebar-submenu">
-            <li><a href="mensajes-peticiones.php"><i class="zmdi zmdi-long-arrow-right"></i> Mensajes </a></li>
-            <li><a href="mantenimiento-peticiones.php"><i class="zmdi zmdi-long-arrow-right"></i> Mantenimiento </a></li>
-          </ul>
-        </li>
-        Testimonios
-        <li>
-          <a href="javaScript:void();"><i class="zmdi zmdi-long-arrow-right"></i> Testimonios <i class="fa fa-angle-left pull-right"></i></a>
-          <ul class="sidebar-submenu">
-            <li><a href="mensajes-testimonios.php"><i class="zmdi zmdi-long-arrow-right"></i> Mensajes </a></li>
-            <li><a href="mantenimiento-testimonios.php"><i class="zmdi zmdi-long-arrow-right"></i> Mantenimiento </a></li>
-
-          </ul>
-        </li>
-    
-        <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Level One</a></li>
-
-      </ul>
-    </li> -->
-
-    <!-- FIN -->
+ 
 
     <!-- CONSOLIDACIONES -->
     <li>
@@ -135,7 +60,8 @@
         <i class="fa fa-angle-left pull-right"></i>
       </a>
       <ul class="sidebar-submenu">   
-        <li><a href="../php/tablas/gdf/lista-consolidados-gdf.php" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Comidas</a></li>
+        <li><a href="mantenimiento-cartelera.php" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> cartelera</a></li>
+        <li><a href="lista-comidas.php" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Comidas</a></li>
         <li><a href="lista-bebidas" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Bebidas</a></li>
         <li><a href="lista-postres" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Postres</a></li>
 
@@ -143,29 +69,15 @@
     </li>
 
     <!-- FIN -->
-    <!-- ENCUENTROS -->
-    <!-- <li>
-      <a href="javaScript:void();" class="waves-effect">
-        <i class="fa fa-share"></i> <span>Encuentros</span>
-        <i class="fa fa-angle-left pull-right"></i>
-      </a>
-      <ul class="sidebar-submenu">   
-        <li><a href="lista-encuentros" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Encuentros</a></li>
-        <li><a href="lista-no-encuentros" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Pendientes</a></li>
-
-      </ul>
-    </li> -->
-
-    <!-- FIN -->
-    <!-- BAUTIZADOS -->
+      <!-- BAUTIZADOS -->
     <li>
       <a href="javaScript:void();" class="waves-effect">
         <i class="fa fa-share"></i> <span>Pedidos</span>
         <i class="fa fa-angle-left pull-right"></i>
       </a>
       <ul class="sidebar-submenu">   
-        <li><a href="lista-bautizados" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Realizados</a></li>
-        <li><a href="lista-bautizados-proceso" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Pendientes</a></li>
+        <li><a href="lista-realizados" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Realizados</a></li>
+        <li><a href="lista-pendientes" class="waves-effect"><i class="zmdi zmdi-long-arrow-right"></i> Pendientes</a></li>
 
       </ul>
     </li>

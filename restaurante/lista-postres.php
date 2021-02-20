@@ -156,8 +156,8 @@ include_once './configuracion/conexion.php';
                                 <div class="input-group mb-3">
                                     <select name="categoria" id="categoria" class="form-control">
                                         <option value="comida">comida</option>
-                                        <option value="bebida">bebida</option>
-                                        <option value="postre">postre</option>
+                                        <option value="comida">bebida</option>
+                                        <option value="comida">postres</option>
                                     </select>
                                 </div>
                             </div>
@@ -292,65 +292,15 @@ include_once './configuracion/conexion.php';
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#tabla').load('php/tablas/administrador/cartelera.php');
+            $('#tabla').load('php/tablas/administrador/postres.php');
             // $('#buscador').load('php/tablas/buscador.php');
         });
     </script>
 
     <script type="text/javascript">
-        $(document).ready(function() {
-            $('#btnAgregar').click(function() {
-
-                if ($('#nombre').val() == "") {
-                    llenar_campo();
-                    return false;
-                } else if ($('#precio').val() == "") {
-                    llenar_campo();
-                    return false;
-                } else if ($('#categoria').val() == "") {
-                    llenar_campo();
-                    return false;
-                } else if ($('#imagen').val() == "") {
-                    llenar_campo();
-                    return false;
-                }
-                var formData = new FormData(document.getElementById("frmCartelera"));
-
-                $.ajax({
-                    url: "php/crud/administrador/cartelera/agregar.php",
-                    type: "post",
-                    dataType: "html",
-                    data: formData,
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-
-                    success: function(r) {
-                        if (r == 2) {
-                            existe_agregar();
-                        } else
-                        if (r == 1) {
-                            $("#nombre").val('').change();
-                            $("#telefono").val('').change();
-                            $("#descripcion").val('').change();
-                            $("#telefono").val('').change();
-                            $("#imagen").val('').change();
-
-                            exito_agregar();
-                            $('#tabla').load('php/tablas/administrador/cartelera.php');
-                        } else {
-
-                            error_agregar(r);
-                            $('#tabla').load('php/tablas/administrador/cartelera.php');
-
-                        }
-                    }
-                });
-
-            });
+       
             $('#actualizadatos').click(function() {
                 actualizaDatos();
-            });
         });
     </script>
 
@@ -384,9 +334,9 @@ include_once './configuracion/conexion.php';
                     if (r == 1) {
                         exito_actualizar();
                         $("#imagenu").val('').change()
-                        $('#tabla').load('php/tablas/administrador/cartelera.php');
+                        $('#tabla').load('php/tablas/administrador/postres.php');
                     } else {
-                        $('#tabla').load('php/tablas/administrador/cartelera.php');
+                        $('#tabla').load('php/tablas/administrador/postres.php');
                         error_actualizar(r);
                     //    console.log/
                     }
@@ -419,7 +369,7 @@ include_once './configuracion/conexion.php';
                 success: function(r) {
                     if (r == 1) {
                         exito_eliminar();
-                        $('#tabla').load('php/tablas/administrador/cartelera.php');
+                        $('#tabla').load('php/tablas/administrador/postres.php');
                     } else {
                         error_eliminar();
                     }

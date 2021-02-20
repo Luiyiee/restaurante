@@ -13,6 +13,11 @@ $total_facturas  = mysqli_fetch_assoc($result_facturas);
 
 $total_notificaciones = $total_pedidos['total_pedidos'] + $total_facturas['total_facturas'];
           ?>
+          <script type="text/javascript">
+  function edt_id(id) {
+    window.location.href = 'perfil.php?edit_id=' + id;
+  }
+</script>
 <!--Start topbar header-->
 <header class="topbar-nav">
  <nav class="navbar navbar-expand fixed-top">
@@ -131,18 +136,21 @@ $total_notificaciones = $total_pedidos['total_pedidos'] + $total_facturas['total
            <div class="media">
              <div class="avatar"><img class="align-self-start mr-3" src="images/users/lideres/<?php echo $_SESSION['datos_login']['imagen']; ?>" alt="user avatar"></div>
             <div class="media-body">
-            <h6 class="mt-2 user-title"> <?php echo $_SESSION['datos_login']['usuario']; ?> </h6>
+            <h6 class="mt-2 user-title"> <?php echo $_SESSION['datos_login']['nombres']; ?> </h6>
             <p class="user-subtitle"> <?php echo $_SESSION['datos_login']['email']; ?> </p>
             </div>
            </div>
           </a>
         </li>
-        <li class="dropdown-divider"></li>
+        <!-- <li class="dropdown-divider"></li>
         <li class="dropdown-item"><i class="icon-envelope mr-2"></i> Inbox</li>
         <li class="dropdown-divider"></li>
         <li class="dropdown-item"><i class="icon-wallet mr-2"></i> Account</li>
         <li class="dropdown-divider"></li>
-        <li class="dropdown-item"><i class="icon-settings mr-2"></i> Setting</li>
+        <li class="dropdown-item"><i class="icon-settings mr-2"></i> Setting</li> -->
+        <li class="dropdown-item">
+            <a href="javascript:edt_id('<?php echo $_SESSION['datos_login']['id_usuario']; ?>')"><i class="icon-settings mr-2"></i> Configuración
+          </li>
         <li class="dropdown-divider"></li>
         <li class="dropdown-item"><i class="icon-power mr-2"></i> <a href="configuracion/cerrar_sesion.php"> Cerrar sesión</a></li>
       </ul>

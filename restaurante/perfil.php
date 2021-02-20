@@ -10,16 +10,16 @@ $arregloUsuario = $_SESSION['datos_login'];
 
 
 if (!isset($_GET['edit_id'])) {
-    header("Location: ../prejus.cdf/inicio.php");
+    header("Location: ../restaurante/inicio.php");
    
 } else if(isset($_GET['edit_id'])) {
 
     if($arregloUsuario['id_usuario']== $_GET['edit_id']){
-    $sql_query = "SELECT * FROM usuarios WHERE id=6"/* . $_GET['edit_id']*/;
+        $sql_query = "SELECT * FROM usuarios WHERE id=" . $_GET['edit_id'];
     $result_set = mysqli_query($conexion, $sql_query);
     $fetched_row = mysqli_fetch_array($result_set, MYSQLI_ASSOC); 
    }else {
-    header("Location: ../prejus.cdf/inicio.php");
+    header("Location: ../restaurante/inicio.php");
    }
    
     

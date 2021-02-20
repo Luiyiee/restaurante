@@ -22,7 +22,7 @@ include "../configuracion/conexion.php";
                     $nombres = $datos_usuario[1];
                     $apellidos = $datos_usuario[2];
                     $email = $datos_usuario[5];
-                    $imagen_perfil = $datos_usuario[8];
+                    $imagen_perfil = $datos_usuario[7];
                     $nivel = $datos_usuario[8];
                     $estado = $datos_usuario[9];
                     $conexion = $datos_usuario[14];

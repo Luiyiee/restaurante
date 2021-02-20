@@ -6,15 +6,15 @@ $conexion = conexion();
 
 
 $nombre = $_POST['nombre'];
-$telefono = $_POST['telefono'];
-$descripcion = $_POST['descripcion'];
-$fecha = $_POST['fecha'];
+$precio = $_POST['precio'];
+$categoria = $_POST['categoria'];
+$iduser = $_SESSION['datos_login']['email'];
 
 if(buscaRepetido($nombre,$conexion)==1){
 echo 2;
 }else{
     if(preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/',$nombre) && 
-			    preg_replace("/[^0-9]/", '', $telefono) 
+			    preg_replace("/[^0-9]/", '', $precio) 
 				){
                     $carpeta="../../../../images/cartelera/";
                     $nombreI = $_FILES['imagen']['name'];
@@ -26,9 +26,9 @@ echo 2;
                     $nombreFinal = time().'.'.$extension;
                     if($extension=='jpg' || $extension == 'png' || $extension == 'jpeg'){
                         if(move_uploaded_file($_FILES['imagen']['tmp_name'], $carpeta.$nombreFinal)){
-                            $sql = "INSERT into cartelera 
-                            (nombre,telefono,descripcion,imagen,fecha,eliminado)
-                    values  ('$nombre','$telefono','$descripcion','$nombreFinal','$fecha','1')";
+                            $sql = "INSERT into tb_comidas 
+                            (nombre,precio,categoria,imagen,fecha,idusuario)
+                    values  ('$nombre','$precio','$categoria','$nombreFinal',now(),'$iduser')";
                             echo $result = mysqli_query($conexion, $sql)or die($conexion->error);
                     	}else{
                             echo "no se puede subir la imagen";
@@ -43,7 +43,7 @@ echo 2;
 
 
 function buscaRepetido($nombre,$conexion){
-    $sql="SELECT * from cartelera  where nombre='$nombre' ";
+    $sql="SELECT * from tb_comidas  where nombre='$nombre' ";
     $result=mysqli_query($conexion,$sql);
 
     if(mysqli_num_rows($result) > 0){

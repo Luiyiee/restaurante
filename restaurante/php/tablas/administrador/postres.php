@@ -15,13 +15,9 @@ $conexion = conexion();
 <div class="row">
 	<div class="col-lg-12">
 		<div class="card">
-			<div class="card-header"><i class="fa fa-table"></i> CARTELERA EVENTO</div>
+			<div class="card-header"><i class="fa fa-table"></i> Lista postres</div>
 
-			<div class="card-header">
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalNuevo">
-					<i class="fa fa-plus"></i> Agregar evento
-				</button>
-			</div>
+		
 
 			<div class="card-body">
 				<div class="table-responsive">
@@ -38,7 +34,7 @@ $conexion = conexion();
 						</thead>
 						<tbody>
 							<?php
-							$sql_query = "SELECT * FROM tb_comidas ";
+							$sql_query = "SELECT * FROM tb_comidas where categoria = 'postre' ";
 							$result_set = mysqli_query($conexion, $sql_query);
 							$i = 1;
 							while ($ver = mysqli_fetch_array($result_set)) {
